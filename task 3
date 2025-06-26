@@ -1,0 +1,38 @@
+-- Select all columns from the Books table
+SELECT * FROM Books;
+
+-- Select specific columns: Title and PublishedYear from Books
+SELECT Title, PublishedYear FROM Books;
+
+-- Select books published after 2000
+SELECT * FROM Books
+WHERE PublishedYear > 2000;
+
+-- Select members from a specific city (e.g., Pune')
+SELECT * FROM Members
+WHERE City = 'Pune';
+
+-- Select books with title containing the word 'Cybersecurity'
+SELECT * FROM Books
+WHERE Title LIKE '%Cybersecurity%';
+
+-- Select members who registered between 2010 and 2020
+SELECT * FROM Members
+WHERE RegistrationDate BETWEEN '2010-01-01' AND '2020-12-31';
+
+--  Select books that are either published after 2010 OR have more than 200 pages
+SELECT * FROM Books
+WHERE PublishedYear > 2010 OR Pages > 200;
+
+--  Select books published before 2010 AND with less than 200 pages
+SELECT * FROM Books
+WHERE PublishedYear < 2010 AND Pages < 200;
+
+-- Order books by PublishedYear in descending order
+SELECT * FROM Books
+ORDER BY PublishedYear DESC;
+
+-- Get top 5 most recently published books
+SELECT * FROM Books
+ORDER BY PublishedYear DESC
+LIMIT 5;
